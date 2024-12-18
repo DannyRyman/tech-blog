@@ -182,6 +182,12 @@ Frameworks impose specific patterns and behaviors, making it difficult to refact
 
 Developers need to learn and understand the DI framework in addition to managing dependencies, adding overhead for teams.
 
+For developers with extensive experience using DI frameworks, the learning curve may feel negligible. However, this perspective often underestimates the complexity involved. Much of this knowledge is accumulated gradually over time, making it difficult to appreciate the challenges faced by less experienced developers.
+
+For newer developers or those unfamiliar with a specific framework, manual DI can be far easier to reason about. The code paths are explicit and straightforward, allowing them to trace dependencies and understand how objects interact without needing to learn the intricacies of a framework's behavior.
+
+To illustrate, consider an analogy: convincing a wizard that "magic" is bad might be nearly impossible because they have spent years mastering their spells and rituals. Similarly, experienced developers who have invested time in mastering a DI framework may find it hard to see its downsides. However, for someone new to the field, magic can be both intimidating and opaque. Manual DI, on the other hand, is like handing them a simple toolkit—easy to learn, highly transparent, and empowering from the start.
+
 ---
 
 ## How to Do Manual DI Effectively
