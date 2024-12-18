@@ -72,19 +72,31 @@ Manual DI can handle lifecycles easily:
 **Example**:
 
 ```kotlin
-class RequestHandler(val logger: Logger, val database: Database)
+fun bootstrap(): WebServer {
+    val logger = Logger() // Singleton
+    val databaseConnectionFactory = { DatabaseConnection() } // Transient
+    return WebServer(port = 8080).apply {
+        configureRoutes(logger, databaseConnectionFactory)
+    }
+}
 
-fun createRequestHandler(logger: Logger, database: Database): RequestHandler {
-    return RequestHandler(logger, database)
+fun WebServer.configureRoutes(
+    logger: Logger,
+    databaseConnectionFactory: () -> DatabaseConnection
+) {
+    routing {
+        get("/users/{id}") {
+            val userId = call.parameters["id"]
+            val userService = UserService(logger, databaseConnectionFactory)
+            val response = userService.getUser(userId) // Request Scope
+            call.respondText(response, ContentType.Text.Plain)
+        }
+    }
 }
 
 fun main() {
-    val logger = Logger() // Singleton
-    val database = Database(logger) // Singleton
-
-    // Transient instance for each request
-    val handler = createRequestHandler(logger, database)
-    handler.process()
+    val webServer = bootstrap()
+    webServer.start()
 }
 ```
 
