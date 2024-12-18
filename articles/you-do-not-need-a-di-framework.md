@@ -53,6 +53,8 @@ fun main() {
 
 Here, dependencies are manually created and passed explicitly. While this might seem verbose for small examples, in practice it keeps the wiring **clear and traceable**.
 
+> **Aside**: Interestingly, a common pattern has emerged among developers using frameworks like Spring to centralize their dependency bootstrapping in dedicated configuration files instead of relying on annotations scattered throughout the code. This practice simplifies reasoning about dependencies but highlights the irony of frameworks' promises of "automation." If centralizing configuration improves clarity, it suggests that fully automated dependency resolution may not always be beneficial or necessary. This approach brings Spring closer to manual DI principles, emphasizing that explicitness and intentional design often lead to better outcomes.
+
 ### 2. Managing Lifecycle Scopes
 
 DI frameworks provide lifecycle scopes like **singleton**, **transient**, and **request-scoped** objects. For instance, a singleton service is only instantiated once.
