@@ -216,12 +216,10 @@ This is simple, clear, and makes each class’s dependencies explicit.
 
 ### 2. Factory Functions
 
-For dependencies that need to be created on demand, use factory functions:
+For dependencies that need to be created on demand, instead of bootstraping the dependency directly, wrap it is a factory function:
 
 ```kotlin
-fun createRequestHandler(logger: Logger, database: Database): RequestHandler {
-    return RequestHandler(logger, database)
-}
+val databaseConnectionFactory: () -> DatabaseConnection = { DatabaseConnection(config.connectionString) }
 ```
 
 ### 3. Group Related Dependencies
