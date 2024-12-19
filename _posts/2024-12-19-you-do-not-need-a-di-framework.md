@@ -1,6 +1,7 @@
 ---
 title: "Why You Don’t Need a DI Framework: A Case for Manual Dependency Injection"
 date: 2024-12-18
+excerpt: Dependency Injection (DI) frameworks are so widely adopted that many developers assume they are the only option for managing dependencies in an application. However, this prevailing wisdom often goes unchallenged, leading to unnecessary complexity, opaque behavior, and an over-reliance on tools that add abstraction with limited benefits.
 ---
 
 Dependency Injection (DI) frameworks are so widely adopted that many developers assume they are the only option for managing dependencies in an application. However, this prevailing wisdom often goes unchallenged, leading to unnecessary complexity, opaque behavior, and an over-reliance on tools that add abstraction with limited benefits.
