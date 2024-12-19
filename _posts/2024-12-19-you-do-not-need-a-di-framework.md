@@ -217,7 +217,7 @@ This is simple, clear, and makes each class’s dependencies explicit.
 
 ### 2. Factory Functions
 
-For dependencies that need to be created on demand, instead of bootstraping the dependency directly, wrap it is a factory function:
+For dependencies that need to be created on demand, instead of bootstrapping the dependency directly, wrap it in a factory function:
 
 ```kotlin
 val databaseConnectionFactory: () -> DatabaseConnection = { DatabaseConnection(config.connectionString) }
