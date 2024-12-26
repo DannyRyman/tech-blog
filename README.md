@@ -14,3 +14,6 @@ How the language around FP makes it sound more complex than it actually is (i.e.
 
 ## TDD works better when it is not fine grained
 Testing through the public API using real services leads to better outcomes than fine grained unit tests
+
+## no DI framework follow up
+How it leads to bad architecture the violates interface segregation principle
