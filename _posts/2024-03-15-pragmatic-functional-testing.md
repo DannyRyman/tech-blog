@@ -44,13 +44,13 @@ Rather than focusing on isolated unit tests or fragile end-to-end (E2E) tests, t
 
 ## **Advantages of This Approach**
 ✅ **High Confidence in System Behavior**  
-   - By testing real components and interactions, this method avoids the **false sense of security** often associated with over-mocking.  
+By testing real components and interactions, this method avoids the **false sense of security** often associated with over-mocking.  
 ✅ **Catches Integration Issues Early**  
-   - Internal services are tested **in context**, reducing the risk of integration failures only appearing in production.  
+Internal services are tested **in context**, reducing the risk of integration failures only appearing in production.  
 ✅ **Minimal Refactoring Overhead**  
-   - Tests are **less fragile** because they validate **outcomes rather than implementation details**.  
+Tests are **less fragile** because they validate **outcomes rather than implementation details**.  
 ✅ **More Realistic Than Pure Unit Testing**  
-   - Ensures that the system as a whole works as expected, rather than verifying only individual methods.  
+Ensures that the system as a whole works as expected, rather than verifying only individual methods.  
 
 ## **When to Break the Convention**
 While this functional testing approach is robust, there are cases where alternative strategies make more sense:
