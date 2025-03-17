@@ -99,10 +99,9 @@ This **pragmatic unit testing approach** provides a middle ground between **isol
 
 For teams struggling with **white-box unit tests** that mirror the code structure or overly coupled test suites, this approach offers a structured yet flexible alternative—one that maximizes **test effectiveness and system reliability** while keeping test suites maintainable.
 
-\n
----
-\n
+<div style="margin-top: 40px;"></div>
 
+---
 > ### 📝 An Evolution of Thought: How I Came to This Approach  
 >  
 > I’ve refined my perspective on testing over a long time—**with plenty of missteps along the way**. Having been an early(ish) adopter of **Extreme Programming (XP)**, I’ve spent years experimenting with different testing styles, often influenced by shifting industry trends.  
