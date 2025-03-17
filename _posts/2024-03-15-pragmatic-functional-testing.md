@@ -44,7 +44,7 @@ Rather than focusing on isolated, white-box unit tests or costly full end-to-end
    - This prevents issues that arise from mocking infrastructure that is **an integral part of the domain**.  
 
 4. **Assertions at the Database Level Instead of Another API**  
-   - Rather than testing against another public API endpoint, assertions are made at the **database level** to verify expected state changes. This approach avoids coupling tests to multiple endpoints, ensures tests remain independent, and allows validation even when there is no secondary API available.
+   - Rather than using another API endpoint than the one under test, assertions are made at the **database level** to verify expected state changes. This approach avoids coupling tests to multiple endpoints, ensures tests remain independent, and allows validation even when there is no secondary API available.
    - Additionally, higher-level integration and system tests will already cover **cross-endpoint** behavior, making such assertions redundant at this level.  
    - Example: To test a `PUT` endpoint has implemented the desired behaviour, we would verify the changes made to the database rather than say using a GET endpoint to get the data for verification.
 
@@ -98,7 +98,9 @@ For a deeper discussion on why this approach works, we highly recommend:
 This **pragmatic unit testing approach** provides a middle ground between **isolated unit testing and full end-to-end tests**, balancing **realism, maintainability, and execution speed**. By testing against a **single API endpoint** and asserting at system boundaries, this method delivers **high confidence in production readiness** without excessive fragility.
 
 For teams struggling with **white-box unit tests** that mirror the code structure or overly coupled test suites, this approach offers a structured yet flexible alternative—one that maximizes **test effectiveness and system reliability** while keeping test suites maintainable.
-```
+
+
+
 
 > ### 📝 An Evolution of Thought: How I Came to This Approach  
 >  
