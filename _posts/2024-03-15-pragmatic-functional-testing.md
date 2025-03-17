@@ -39,11 +39,12 @@ Rather than focusing on isolated, white-box unit tests or costly full end-to-end
    - This prevents issues that arise from mocking infrastructure that is **an integral part of the domain**.  
 
 4. **Assertions at the Database Level Instead of Another API**  
-   - Rather than testing against another public API, assertions are made at the **database level** to verify expected state changes. This approach avoids coupling tests to multiple endpoints, ensures tests remain independent, and allows validation even when there is no secondary API available.  
+   - Rather than testing against another public API endpoint, assertions are made at the **database level** to verify expected state changes. This approach avoids coupling tests to multiple endpoints, ensures tests remain independent, and allows validation even when there is no secondary API available.
    - Additionally, higher-level integration and system tests will already cover **cross-endpoint** behavior, making such assertions redundant at this level.  
+   - Example: To test a `PUT` endpoint has implemented the desired behaviour, we would verify the changes made to the database rather than say using a GET endpoint to get the data for verification.
 
 5. **Data-Driven Setup**  
-   - Instead of **mocking repositories**, test data is inserted into the database to create setup conditions.  
+   - Instead of **mocking repositories**, or using other API endpoints (i.e. `PUT` endpoint), test data is inserted into the database as part of the test to create setup conditions.  
    - Example: Before testing a `GET` request, relevant data is **manually seeded into the database** to ensure realistic test conditions.  
 
 6. **Avoiding White-Box Test Structure Pitfalls**  
