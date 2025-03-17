@@ -94,3 +94,19 @@ This **pragmatic unit testing approach** provides a middle ground between **isol
 
 For teams struggling with **white-box unit tests** that mirror the code structure or overly coupled test suites, this approach offers a structured yet flexible alternative—one that maximizes **test effectiveness and system reliability** while keeping test suites maintainable.
 ```
+
+{% capture note %}
+### 📝 An Evolution of Thought: How I Came to This Approach  
+
+I’ve refined my perspective on testing over a long time—**with plenty of missteps along the way**. Having been an early(ish) adopter of **Extreme Programming (XP)**, I’ve spent years experimenting with different testing styles, often influenced by shifting industry trends.  
+
+I remember early successes where we managed to **refactor large areas of legacy code** that no one wanted to touch. By **first wrapping the existing behavior in tests**, we were able to replace fragile code with confidence, ensuring that the system still worked—even if we didn’t fully understand why certain things were originally built the way they were.  
+
+Then came a shift in the industry, where this **style of testing was frowned upon**. A new wave of opinionated developers advocated that **everything be tested in isolation**, promoting strict **mock-heavy, white-box unit tests**. This led to tests that felt **detached from real system behavior**, didn’t provide confidence when refactoring, and ultimately, **strayed from the original intent of TDD**—which was to help document the system and prevent regressions.  
+
+This approach put off many developers, including **David Heinemeier Hansson (DHH), the creator of Ruby on Rails**, who famously wrote ["TDD is Dead, Long Live Testing"](https://dhh.dk/2014/tdd-is-dead-long-live-testing.html). His frustration sparked a broader debate, leading to conversations with **Kent Beck and Martin Fowler**—who clarified that **TDD was never about isolating every unit of code**, but rather about driving design through **meaningful** tests ([see discussion](https://martinfowler.com/articles/is-tdd-dead/)).  
+
+Reflecting on those early successes, I realized that **TDD itself wasn’t the problem**. The problem was the **shift in focus from testing behaviors to testing isolated units**. The best results didn’t come from testing every internal class in isolation, but from **testing behaviors through the system’s public API**—treating a “unit” as a **unit of behavior** rather than a **unit of code**.  
+{% endcapture %}
+
+{{ note | markdownify }}
