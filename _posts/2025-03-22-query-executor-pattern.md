@@ -62,7 +62,7 @@ data class QueryContext(
 )
 
 data class RequestContext(val loggedOnUser: User)
-
+```
 
 ## Why QueryExecutor Works Well
 
